@@ -1,0 +1,55 @@
+
+
+
+
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXvXXXXXXXXXXXX
+    X.....................XX.....................X
+    X.P.p.p.p.p.p.p.p.p.p.XX.p.p.p.p.p.p.p.p.p.P.X
+    X.....................XX.....................X
+    X.p.XXXXX.p.XXXXXXX.p.XX.p.XXXXXXX.p.XXXXX.p.X
+    X...XXXXX...XXXXXXX...XX...XXXXXXX...XXXXX...X
+    X.p.XXXXX.p.XXXXXXX.p.XX.p.XXXXXXX.p.XXXXX.p.X
+    X............................................X
+    X.p.p.p.p.p.p.p.p.p.p.pp.p.p.p.p.p.p.p.p.p.p.X
+    X............................................X
+    X.p.XXXXX.p.XX.p.XXXXXXXXXXXX.p.XX.p.XXXXX.p.X
+    X...XXXXX...XX...XXXXXXXXXXXX...XX...XXXXX...X
+    X...........XX........XX........XX...........X
+    X.p.p.p.p.p.XX.p.p..p.XX.p..p.p.XX.p.p.p.p.p.X
+    X...........XX........XX........XX...........X
+    XXXXXXXXX.p.XXXXXXX.p.XX.p.XXXXXXX.p.XXXXXXXXX
+    ........X...XXXXXXX...XX...XXXXXXX...X........
+    ........X.p.XX..................XX.p.X........
+    ........X...XX.p.p.p.p..p.p.p.p.XX...X........
+    ........X.p.XX..................XX.p.X........
+    ........X...XX.p.XXXXooooXXXX.p.XX...X........
+    hXXXXXXXX.p.XX...X..........X...XX.p.XXXXXXXXh
+    X................X..........X................X
+    X..p.p.p.p.p.p.p.X..........X.p.p.p.p.p.p.p..X
+    X................X..........X................X
+    XXXXXXXXX.p.XX.p.X..........X.p.XX.p.XXXXXXXXX
+    ........X...XX...XXXXXXXXXXXX...XX...X........
+    ........X.p.XX..................XX.p.X........
+    ........X...XX.p.p.p.p..p.p.p.p.XX...X........
+    ........X.p.XX..................XX.p.X........
+    ........X...XX...XXXXXXXXXXXX...XX...X........
+    XXXXXXXXX.p.XX.p.XXXXXXXXXXXX.p.XX.p.XXXXXXXXX
+    X.....................XX.....................X
+    X.p.p.p.p.p.p..p.p..p.XX.p.p.p.p.p.p..p.p..p.X
+    X.....................XX.....................X
+    X.p.XXXXX.p.XXXXXXX.p.XX.p.XXXXXXX.p.XXXXX.p.X
+    X...XXXXX...XXXXXXX...XX...XXXXXXX...XXXXX...X
+    X......XX............................XX......X
+    X.p..p.XX.p.p..p.p..p.pp.p.p..p.p..p.XX.p..p.X
+    X......XX............................XX......X
+    XXXX.p.XX.p.XX...XXXXXXXXXXXX...XX.p.XX.p.XXXX
+    XXXX...XX...XX.p.XXXXXXXXXXXX.p.XX...XX...XXXX
+    X...........XX........XX........XX...........X
+    X.p.p.p.p.p.XX.p.p..p.XX.p..p.p.XX.p.p.p.p.p.X
+    X...........XX........XX........XX...........X
+    X.p.XXXXXXXXXXXXXXX.p.XX.p.XXXXXXXXXXXXXXX.p.X
+    X...XXXXXXXXXXXXXXX...XX...XXXXXXXXXXXXXXX...X
+    X............................................X
+    X.P.p.p.p.p.p.p.p.p.p.pp.p.p.p.p.p.p.p.p.p.P.X
+    X............................................X
+    XXXXXXXXXvXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
