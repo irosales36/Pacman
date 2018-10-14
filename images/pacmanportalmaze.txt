@@ -2,6 +2,7 @@
 
 
 
+
     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXvXXXXXXXXXXXX
     X.....................XX.....................X
     X.P.p.p.p.p.p.p.p.p.p.XX.p.p.p.p.p.p.p.p.p.P.X
@@ -47,8 +48,8 @@
     X...........XX........XX........XX...........X
     X.p.p.p.p.p.XX.p.p..p.XX.p..p.p.XX.p.p.p.p.p.X
     X...........XX........XX........XX...........X
-    X.p.XXXXXXXXXXXXXXX.p.XX.p.XXXXXXXXXXXXXXX.p.X
-    X...XXXXXXXXXXXXXXX...XX...XXXXXXXXXXXXXXX...X
+    X...XXXXXXXXXXXXXXX.p.XX.p.XXXXXXXXXXXXXXX...X
+    X.p.XXXXXXXXXXXXXXX...XX...XXXXXXXXXXXXXXX.p.X
     X............................................X
     X.P.p.p.p.p.p.p.p.p.p.pp.p.p.p.p.p.p.p.p.p.P.X
     X............................................X

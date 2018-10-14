@@ -1,13 +1,14 @@
 import pygame
 from imagerect import ImageRect
-
+from pill import Pill
 
 class Maze:
     RED = (255, 0 , 0)
     BRICK_SIZE = 13
 
-    def __init__(self,screen, mazefile, brickfile, shieldfile, portalfile, powerpill, powerpill2):
+    def __init__(self, screen, pills, mazefile, brickfile, shieldfile, portalfile, powerpill, powerpill2):
         self.screen = screen
+        self.pills = pills
         self.filename = mazefile
         with open(self.filename, 'r') as f:
             self.rows = f.readlines()
@@ -57,11 +58,17 @@ class Maze:
                 elif col == 'v':
                     self.vportals.append(pygame.Rect(ncol * dx, nrow * dy, rvportal.width, rvportal.height))
                 elif col == 'p':
-                    self.powerpills.append(pygame.Rect(ncol * dx + rpowerpill.width/2,
-                                                       nrow * dy + rpowerpill.height/2,
-                                                       rpowerpill.width, rpowerpill.height))
+                    x = ncol * dx + rpowerpill.width/2
+                    y = nrow * dy + rpowerpill.height/2
+                    big = False
+                    pill = Pill(self.screen, x, y, big)
+                    self.pills.add(pill)
                 elif col == 'P':
-                    self.powerpills2.append(pygame.Rect(ncol * dx, nrow * dy, rpowerpill2.width, rpowerpill2.height))
+                    x = ncol * dx
+                    y = nrow * dy
+                    big = True
+                    pill = Pill(self.screen, x, y, big)
+                    self.pills.add(pill)
 
     def blitme(self):
         for rect in self.bricks:
@@ -72,7 +79,7 @@ class Maze:
             self.screen.blit(self.hportal.image, rect)
         for rect in self.vportals:
             self.screen.blit(self.vportal.image, rect)
-        for rect in self.powerpills:
-            self.screen.blit(self.powerpill.image, rect)
+        for pill in self.pills:
+            pill.blitme()
         for rect in self.powerpills2:
             self.screen.blit(self.powerpill2.image, rect)

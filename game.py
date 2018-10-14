@@ -1,34 +1,37 @@
 import pygame
 from maze import Maze
-from eventloop import EventLoop
+from pacman import Pacman
+from pygame.sprite import Group
+import game_functions as gf
 
-
-class Game:
+def run_game():
     BLACK = (0, 0, 0)
+    pygame.init()
+    screen = pygame.display.set_mode((700, 780))
+    pygame.display.set_caption("Pacman Portal")
+    clock = pygame.time.Clock()
 
-    def __init__(self):
-        pygame.init()
-        self.screen = pygame.display.set_mode((700, 780))
-        pygame.display.set_caption("Pacman Portal")
+    # create pacman
+    pacman = Pacman(screen)
+    pills = Group()
 
-        self.maze = Maze(self.screen, mazefile='images/pacmanportalmaze.txt',
-                         brickfile='blue_square', shieldfile='shield', portalfile='portal2',
-                         powerpill='powerpill', powerpill2='powerpill')
 
-    def __str__(self): return 'Game(Pacman Portal), maze=' + str(self.maze) + ')'
+    # create the maze
+    maze = Maze(screen, pills, mazefile='images/pacmanportalmaze.txt', brickfile='blue_square',
+                shieldfile='shield', portalfile='portal2', powerpill='powerpill', powerpill2='powerpill')
 
-    def play(self):
-        eloop = EventLoop(finished=False)
+    # def __str__(self): return 'Game(Pacman Portal), maze=' + str(self.maze) + ')'
 
-        while not eloop.finished:
-            eloop.check_events()
-            self.update_screen()
-
-    def update_screen(self):
-        self.screen.fill(Game.BLACK)
-        self.maze.blitme()
+    while True:
+        screen.fill(BLACK)
+        pacman.check_events()
+        pacman.update()
+        pacman.blitme()
+        maze.blitme()
+        gf.check_pill_collision(screen, pacman, pills)
         pygame.display.flip()
 
+        # set the fps
+        clock.tick(60)
 
-game = Game()
-game.play()
+run_game()
