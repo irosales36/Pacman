@@ -1,6 +1,7 @@
 import pygame
 from maze import Maze
 from pacman import Pacman
+from ghost import Ghost
 from pygame.sprite import Group
 import game_functions as gf
 
@@ -10,11 +11,19 @@ def run_game():
     screen = pygame.display.set_mode((700, 780))
     pygame.display.set_caption("Pacman Portal")
     clock = pygame.time.Clock()
+    start_tick = pygame.time.get_ticks()
 
     # create pacman
     pacman = Pacman(screen)
-    pills = Group()
 
+    # create ghosts
+    ghost1 = Ghost(screen, 1)
+    ghost2 = Ghost(screen, 2)
+    ghost3 = Ghost(screen, 3)
+    ghost4 = Ghost(screen, 4)
+    ghosts = Group(ghost1, ghost2, ghost3, ghost4)
+
+    pills = Group()
 
     # create the maze
     maze = Maze(screen, pills, mazefile='images/pacmanportalmaze.txt', brickfile='blue_square',
@@ -24,12 +33,19 @@ def run_game():
 
     while True:
         screen.fill(BLACK)
+        seconds = int((pygame.time.get_ticks() - start_tick) / 500)
         pacman.check_events()
         pacman.update()
         pacman.blitme()
+        for ghost in ghosts:
+            ghost.get_direction(seconds)
+            ghost.update()
+            ghost.blitme()
         maze.blitme()
         gf.check_pill_collision(screen, pacman, pills)
         pygame.display.flip()
+
+        print("seconds = " + str(seconds))
 
         # set the fps
         clock.tick(60)
