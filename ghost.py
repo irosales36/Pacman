@@ -25,14 +25,14 @@ class Ghost(Sprite):
 
         # Start each new ship at the bottom center of the screen.
         if num == 1:
-            self.rect.centerx = 254 + 30
+            self.rect.centerx = 320
         elif num == 2:
-            self.rect.centerx = 254 + 42
+            self.rect.centerx = 341
         elif num == 3:
-            self.rect.centerx = 254 + 60
+            self.rect.centerx = 362
         elif num == 4:
-            self.rect.centerx = 254 + 72
-        self.rect.centery = 302
+            self.rect.centerx = 383
+        self.rect.centery = 371
 
         # Store a decimal value for the ship's center.
         self.centerx = float(self.rect.centerx)
@@ -138,7 +138,7 @@ class Ghost(Sprite):
                                                          or (self.rect.centerx > 514 and self.rect.centerx < 617)))
                          or (self.rect.centery == 302 and (self.rect.centerx > 253 and self.rect.centerx < 446))
                          or (self.rect.centery == 371 and ((self.rect.centerx > 82 and self.rect.centerx < 254)
-                                                        or (self.rect.centerx > 309 and self.rect.centerx < 390)
+                                                        or (self.rect.centerx > 319 and self.rect.centerx < 383)
                                                         or (self.rect.centerx > 445 and self.rect.centerx < 617)))
                          or (self.rect.centery == 434 and (self.rect.centerx > 253 and self.rect.centerx < 446))
                          or (self.rect.centery == 500 and ((self.rect.centerx > 82 and self.rect.centerx < 320)
@@ -173,7 +173,7 @@ class Ghost(Sprite):
                                                          or (self.rect.centerx > 515 and self.rect.centerx < 618)))
                        or (self.rect.centery == 302 and (self.rect.centerx > 254 and self.rect.centerx < 447))
                        or (self.rect.centery == 371 and ((self.rect.centerx > 83 and self.rect.centerx < 255)
-                                                    or (self.rect.centerx > 310 and self.rect.centerx < 391)
+                                                    or (self.rect.centerx > 320 and self.rect.centerx < 384)
                                                     or (self.rect.centerx > 446 and self.rect.centerx < 618)))
                        or (self.rect.centery == 434 and (self.rect.centerx > 254 and self.rect.centerx < 447))
                        or (self.rect.centery == 500 and ((self.rect.centerx > 82 and self.rect.centerx < 321)
@@ -210,7 +210,7 @@ class Ghost(Sprite):
                                                          or (self.rect.centerx > 514 and self.rect.centerx < 617)))
                        or (self.rect.centery == 302 and (self.rect.centerx > 253 and self.rect.centerx < 446))
                        or (self.rect.centery == 371 and ((self.rect.centerx > 82 and self.rect.centerx < 254)
-                                                    or (self.rect.centerx > 309 and self.rect.centerx < 390)
+                                                    or (self.rect.centerx > 319 and self.rect.centerx < 383)
                                                     or (self.rect.centerx > 445 and self.rect.centerx < 617)))
                        or (self.rect.centery == 434 and (self.rect.centerx > 253 and self.rect.centerx < 446))
                        or (self.rect.centery == 500 and ((self.rect.centerx > 82 and self.rect.centerx < 320)
@@ -245,7 +245,7 @@ class Ghost(Sprite):
                                                     or (self.rect.centerx > 515 and self.rect.centerx < 618)))
                        or (self.rect.centery == 302 and (self.rect.centerx > 254 and self.rect.centerx < 447))
                        or (self.rect.centery == 371 and ((self.rect.centerx > 83 and self.rect.centerx < 255)
-                                                    or (self.rect.centerx > 310 and self.rect.centerx < 391)
+                                                    or (self.rect.centerx > 320 and self.rect.centerx < 384)
                                                     or (self.rect.centerx > 446 and self.rect.centerx < 618)))
                        or (self.rect.centery == 434 and (self.rect.centerx > 254 and self.rect.centerx < 447))
                        or (self.rect.centery == 500 and ((self.rect.centerx > 82 and self.rect.centerx < 321)
@@ -358,86 +358,86 @@ class Ghost(Sprite):
     def get_direction(self, seconds):
         """Respond to keypresses."""
         if self.num == 1:
-            if seconds % 10 == 3:
+            if seconds == 3:
                 # move right
                 self.moving_right = True
                 self.moving_left = False
                 self.priority = True
-            if seconds % 10 == 7:
+            if seconds == 7:
                 # move left
                 self.moving_left = True
                 self.moving_right = False
                 self.priority = True
-            if seconds % 10 == 1:
+            if seconds == 1:
                 # move up
                 self.moving_up = True
                 self.moving_down = False
                 self.priority = False
-            if seconds % 10 == 2:
+            if seconds == 2:
                 # move down
                 self.moving_down = True
                 self.moving_up = False
                 self.priority = False
                 print("1 down = True")
         elif self.num == 2:
-            if seconds % 10 == 9:
+            if seconds == 9:
                 # move right
                 self.moving_right = True
                 self.moving_left = False
                 self.priority = True
-            if seconds % 10 == 4:
+            if seconds == 4:
                 # move left
                 self.moving_left = True
                 self.moving_right = False
                 self.priority = True
-            if seconds % 10 == 2:
+            if seconds == 2:
                 # move up
                 self.moving_up = True
                 self.moving_down = False
                 self.priority = False
-            if seconds % 10 == 3:
+            if seconds == 3:
                 # move down
                 self.moving_down = True
                 self.moving_up = False
                 self.priority = False
         elif self.num == 3:
-            if seconds % 10 == 8:
+            if seconds == 8:
                 # move right
                 self.moving_right = True
                 self.moving_left = False
                 self.priority = True
-            if seconds % 10 == 6:
+            if seconds == 6:
                 # move left
                 self.moving_left = True
                 self.moving_right = False
                 self.priority = True
-            if seconds % 10 == 9:
+            if seconds == 9:
                 # move up
                 self.moving_up = True
                 self.moving_down = False
                 self.priority = False
-            if seconds % 10 == 3:
+            if seconds == 3:
                 # move down
                 self.moving_down = True
                 self.moving_up = False
                 self.priority = False
         elif self.num == 4:
-            if seconds % 10 == 1:
+            if seconds == 1:
                 # move right
                 self.moving_right = True
                 self.moving_left = False
                 self.priority = True
-            if seconds % 10 == 6:
+            if seconds == 6:
                 # move left
                 self.moving_left = True
                 self.moving_right = False
                 self.priority = True
-            if seconds % 10 == 2:
+            if seconds == 2:
                 # move up
                 self.moving_up = True
                 self.moving_down = False
                 self.priority = False
-            if seconds % 10 == 0:
+            if seconds == 0:
                 # move down
                 self.moving_down = True
                 self.moving_up = False

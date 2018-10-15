@@ -4,6 +4,7 @@ from pacman import Pacman
 from ghost import Ghost
 from pygame.sprite import Group
 import game_functions as gf
+import random
 
 def run_game():
     BLACK = (0, 0, 0)
@@ -12,6 +13,7 @@ def run_game():
     pygame.display.set_caption("Pacman Portal")
     clock = pygame.time.Clock()
     start_tick = pygame.time.get_ticks()
+    random.seed()
 
     # create pacman
     pacman = Pacman(screen)
@@ -34,14 +36,16 @@ def run_game():
     while True:
         screen.fill(BLACK)
         seconds = int((pygame.time.get_ticks() - start_tick) / 500)
+        rand_num = random.randint(0, 100)
         pacman.check_events()
         pacman.update()
         pacman.blitme()
+        maze.blitme()
         for ghost in ghosts:
-            ghost.get_direction(seconds)
+            ghost.get_direction(rand_num)
             ghost.update()
             ghost.blitme()
-        maze.blitme()
+
         gf.check_pill_collision(screen, pacman, pills)
         pygame.display.flip()
 
