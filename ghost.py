@@ -23,7 +23,7 @@ class Ghost(Sprite):
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
-        # Start each new ship at the bottom center of the screen.
+        # Start each ghost in the base.
         if num == 1:
             self.rect.centerx = 320
         elif num == 2:
@@ -44,12 +44,27 @@ class Ghost(Sprite):
         self.moving_up = True
         self.moving_down = False
 
-    def center_ghost(self):
-        """Center the ship on the screen."""
-        self.center = self.screen_rect.center
+    def reset(self):
+        """reset the ghost's position"""
+        if self.num == 1:
+            self.rect.centerx = 320
+        elif self.num == 2:
+            self.rect.centerx = 341
+        elif self.num == 3:
+            self.rect.centerx = 362
+        elif self.num == 4:
+            self.rect.centerx = 383
+        self.rect.centery = 371
+        self.centerx = self.rect.centerx
+        self.centery = self.rect.centery
+
+        self.moving_right = False
+        self.moving_left = False
+        self.moving_up = True
+        self.moving_down = False
 
     def update(self):
-        """Updates pacman's position based on movement flags."""
+        """Updates the ghost's position based on movement flags."""
 
         if not self.priority:
 
@@ -353,7 +368,7 @@ class Ghost(Sprite):
         """Draw the ship at its current location."""
         self.screen.blit(self.image, self.rect)
         # print('y = ' + str(self.rect.centery))
-        print('x = ' + str(self.rect.centerx))
+        # print('x = ' + str(self.rect.centerx))
 
     def get_direction(self, seconds):
         """Respond to keypresses."""
@@ -378,7 +393,7 @@ class Ghost(Sprite):
                 self.moving_down = True
                 self.moving_up = False
                 self.priority = False
-                print("1 down = True")
+                # print("1 down = True")
         elif self.num == 2:
             if seconds == 9:
                 # move right

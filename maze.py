@@ -41,7 +41,6 @@ class Maze:
         rhportal = self.hportal.rect
         rvportal = self.vportal.rect
         rpowerpill = self.powerpill.rect
-        rpowerpill2 = self.powerpill2.rect
         w, h = r.width, r.height
         dx, dy = self.deltax, self.deltay
 

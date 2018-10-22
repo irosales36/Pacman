@@ -10,12 +10,12 @@ class Pacman(Sprite):
         self.screen = screen
         self.priority = True
 
-        # Load the ship image, and get its rect.
+        # Load the pacman image, and get its rect.
         self.image = pygame.image.load('images/pacman_right.png')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
-        # Start each new ship at the bottom center of the screen.
+        # Start pacman near the center of the screen
         self.rect.centerx = self.screen_rect.right / 2
         self.rect.centery = 434
 
@@ -29,13 +29,22 @@ class Pacman(Sprite):
         self.moving_up = False
         self.moving_down = False
 
-    def center_pacman(self):
-        """Center the ship on the screen."""
-        self.center = self.screen_rect.center
+    def reset(self):
+        """Center pacman on the screen."""
+        self.rect.centerx = self.screen_rect.right / 2
+        self.rect.centery = 434
+        self.centerx = self.rect.centerx
+        self.centery = self.rect.centery
+
+        self.moving_right = False
+        self.moving_left = False
+        self.moving_up = False
+        self.moving_down = False
+
+        self.image = pygame.image.load('images/pacman_right.png')
 
     def update(self):
         """Updates pacman's position based on movement flags."""
-        #
 
         if not self.priority:
 
