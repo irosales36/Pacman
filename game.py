@@ -32,6 +32,7 @@ def run_game():
     ghost4 = Ghost(screen, 4)
     ghosts = Group(ghost1, ghost2, ghost3, ghost4)
 
+    # create a group for the pills
     pills = Group()
 
     # create the maze
@@ -39,6 +40,10 @@ def run_game():
                 shieldfile='shield', portalfile='portal2', powerpill='powerpill', powerpill2='powerpill')
 
     # def __str__(self): return 'Game(Pacman Portal), maze=' + str(self.maze) + ')'
+
+    # pacman intro sound
+    intro_music = pygame.mixer.Sound('music/pacman_beginning.wav')
+    intro_music.play()
 
     # show the start screen
     ss.Start_Screen(screen, play_button, sb)

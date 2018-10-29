@@ -2,6 +2,8 @@ import pygame
 import sys
 from button import Button
 
+
+
 def check_button(play_button, sb):
     """checks if the play button has been pressed"""
     for event in pygame.event.get():
@@ -24,9 +26,10 @@ def check_button(play_button, sb):
 def check_pill_collision(pacman, pills, sb, maze):
     """checks for pacman-powerpill collision"""
     collision = pygame.sprite.spritecollide(pacman, pills, True)
-
+    chomp_sound = pygame.mixer.Sound('music/pacman_chomp.wav')
     if collision:
-        sb.score += 50
+        chomp_sound.play()
+        sb.score += 10
         sb.prep_score()
         if sb.score > sb.high_score:
             sb.high_score = sb.score
@@ -44,8 +47,9 @@ def check_pill_collision(pacman, pills, sb, maze):
 def check_ghost_collision(pacman, ghosts, sb):
     """checks for pacman-ghost collision"""
     collision = pygame.sprite.spritecollide(pacman, ghosts, False)
-
+    death_sound = pygame.mixer.Sound('music/pacman_death.wav')
     if collision:
+        death_sound.play()
         sb.lives_left -= 1
         sb.prep_lives()
         sb.game_active = False
